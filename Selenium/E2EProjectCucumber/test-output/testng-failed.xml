@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="Academy.listeners"/>
+    <listener class-name="resources.ExtentReporterNG"/>
+  </listeners>
+  <test name="Validating User login(failed)">
+    <classes>
+      <class name="cucumberOptions.TestRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="feature" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- cucumberOptions.TestRunner -->
+    </classes>
+  </test> <!-- Validating User login(failed) -->
+</suite> <!-- Failed suite [Suite] -->

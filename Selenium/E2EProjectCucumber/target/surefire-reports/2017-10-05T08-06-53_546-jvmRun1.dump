@@ -1,0 +1,9 @@
+# Created on 2017-10-05T08:06:54.564
+org.apache.maven.surefire.testset.TestSetFailedException: Suite file C:\Users\rahul\E2EProject\true is not a valid file
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.locateTestSets(TestNGXmlTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:119)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:386)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:323)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:143)
+
+

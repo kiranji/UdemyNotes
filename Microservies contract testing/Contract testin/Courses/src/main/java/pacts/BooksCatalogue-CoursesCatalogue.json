@@ -1,0 +1,150 @@
+{
+  "consumer": {
+    "name": "BooksCatalogue"
+  },
+  "interactions": [
+    {
+      "description": "Appium course Does not exist",
+      "providerStates": [
+        {
+          "name": "Course Appium does not exist",
+          "params": {
+            "name": "Appium"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "path": "/getCourseByName/Appium"
+      },
+      "response": {
+        "status": 404
+      }
+    },
+    {
+      "description": "Get the Appium course details",
+      "providerStates": [
+        {
+          "name": "Course Appium exist"
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "path": "/getCourseByName/Appium"
+      },
+      "response": {
+        "body": {
+          "category": "mobile",
+          "price": 44
+        },
+        "headers": {
+          "Content-Type": "application/json; charset=UTF-8"
+        },
+        "matchingRules": {
+          "body": {
+            "$.category": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$.price": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "integer"
+                }
+              ]
+            }
+          },
+          "header": {
+            "Content-Type": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "application/json(;\\s?charset=[\\w\\-]+)?"
+                }
+              ]
+            }
+          }
+        },
+        "status": 200
+      }
+    },
+    {
+      "description": "getting all courses details",
+      "providerStates": [
+        {
+          "name": "courses exist"
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "path": "/allCourseDetails"
+      },
+      "response": {
+        "body": [
+          {
+            "price": 10
+          },
+          {
+            "price": 10
+          },
+          {
+            "price": 10
+          }
+        ],
+        "headers": {
+          "Content-Type": "application/json; charset=UTF-8"
+        },
+        "matchingRules": {
+          "body": {
+            "$": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type",
+                  "min": 3
+                }
+              ]
+            },
+            "$[*].price": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "integer"
+                }
+              ]
+            }
+          },
+          "header": {
+            "Content-Type": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "application/json(;\\s?charset=[\\w\\-]+)?"
+                }
+              ]
+            }
+          }
+        },
+        "status": 200
+      }
+    }
+  ],
+  "metadata": {
+    "pact-jvm": {
+      "version": "4.2.7"
+    },
+    "pactSpecification": {
+      "version": "3.0.0"
+    }
+  },
+  "provider": {
+    "name": "CoursesCatalogue"
+  }
+}
