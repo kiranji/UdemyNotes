@@ -1,0 +1,78 @@
+{
+	"info": {
+		"_postman_id": "d303888d-1a3f-455c-a766-b940c1be8b72",
+		"name": "googleMaps",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getPlace",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://216.10.245.166/maps/api/place/get/json?place_id=8d2573bdf6ceec0e474c5f388fa917fb&key=qaclick123  ",
+					"protocol": "http",
+					"host": [
+						"216",
+						"10",
+						"245",
+						"166"
+					],
+					"path": [
+						"maps",
+						"api",
+						"place",
+						"get",
+						"json"
+					],
+					"query": [
+						{
+							"key": "place_id",
+							"value": "8d2573bdf6ceec0e474c5f388fa917fb"
+						},
+						{
+							"key": "key",
+							"value": "qaclick123  "
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addPlace",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutPlace",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteAPI",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
